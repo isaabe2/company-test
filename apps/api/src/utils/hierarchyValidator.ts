@@ -13,20 +13,20 @@ export function hasCircularHierarchy(
 	return false
 }
 
-import { Employee } from "../models/Employee"
+import { Department } from "../models/Department"
 
 export async function buildHierarchyMap(
 	departmentId: string
 ): Promise<HierarchyMap> {
-	const employees = await Employee.find({ departments: departmentId }).lean()
+	const department = await Department.findById(departmentId).lean()
 	const map: HierarchyMap = new Map()
 
-	for (const emp of employees) {
-		const hierarchyMap = new Map(Object.entries(emp.hierarchy || {}))
-		const sub = hierarchyMap.get(departmentId.toString())?.subordinates || []
+	if (!department || !department.hierarchy) return map
 
+	for (const [empId, entry] of Object.entries(department.hierarchy)) {
+		const sub = (entry as { subordinates?: any[] }).subordinates || []
 		map.set(
-			emp._id.toString(),
+			empId,
 			sub.map((s: any) => s.toString())
 		)
 	}

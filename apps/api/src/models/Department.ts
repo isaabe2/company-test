@@ -1,16 +1,26 @@
-import { Schema, model, Document } from "mongoose"
+import { Schema, model, Document, Types } from "mongoose"
+
+export interface Hierarchy {
+	// Department superior employee ID
+	superior?: Types.ObjectId
+	// Array of subordinate employee IDs
+	subordinates: Types.ObjectId[]
+}
 
 export interface IDepartment extends Document {
 	name: string
 	description?: string
-	// Array of employee IDs that are members of this department
-	members: Schema.Types.ObjectId[]
+	// The hierarchy is an object with keys being employee IDs
+	hierarchy: Record<string, Hierarchy>
 }
 
 const DepartmentSchema = new Schema<IDepartment>({
 	name: { type: String, required: true },
 	description: { type: String },
-	members: [{ type: Schema.Types.ObjectId, ref: "Employee" }],
+	hierarchy: {
+		type: Object,
+		default: {},
+	},
 })
 
 export const Department = model<IDepartment>("Department", DepartmentSchema)
