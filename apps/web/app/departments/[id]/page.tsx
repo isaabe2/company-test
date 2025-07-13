@@ -2,12 +2,13 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from "react"
 import { useParams } from "next/navigation"
-import NavBar from "../../components/navbar"
+import NavBar from "../../components/Navbar"
 import { Department } from "../../types/department"
 import { Employee } from "../../types/employee"
 import { TrashIcon, UserIcon } from "@heroicons/react/24/solid"
 import EditDeptModal from "./EditDeptModal"
 import ConfirmDeleteDeptModal from "../components/ConfirmDeleteDeptModal"
+import Loader from "../../components/Loader"
 
 export default function DepartmentDetailPage() {
 	const params = useParams()
@@ -124,7 +125,7 @@ export default function DepartmentDetailPage() {
 				style={{ minHeight: "80vh" }}
 			>
 				{loading ? (
-					<div className="text-center">Charging departament...</div>
+					<Loader />
 				) : department ? (
 					<div className="w-100" style={{ maxWidth: 800 }}>
 						<div className="card shadow p-4 mb-4 w-100">

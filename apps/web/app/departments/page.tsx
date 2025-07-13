@@ -2,7 +2,7 @@
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from "react"
 import { Button } from "react-bootstrap"
-import NavBar from "../components/navbar"
+import NavBar from "../components/Navbar"
 import DepartmentCard from "./components/DepartmentCard"
 import { Department } from "../types/department"
 import CreateDepartmentModal from "./components/CreateDepartmentModal"

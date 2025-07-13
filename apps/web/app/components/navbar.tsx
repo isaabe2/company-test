@@ -13,7 +13,7 @@ function NavBar() {
 			<Container>
 				<Navbar.Brand>
 					<Link href="/" style={{ textDecoration: "none", color: "#fff" }}>
-						COMPANYNAME
+						COMPANY-TEST
 					</Link>
 				</Navbar.Brand>
 				<Navbar.Toggle aria-controls="basic-navbar-nav" />

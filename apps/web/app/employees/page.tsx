@@ -1,7 +1,7 @@
 "use client"
 import "bootstrap/dist/css/bootstrap.min.css"
 import { useEffect, useState } from "react"
-import NavBar from "../components/navbar"
+import NavBar from "../components/Navbar"
 import { Employee } from "../types/employee"
 import { Department } from "../types/department"
 import EditEmployeeModal from "./[id]/EditEmployeeModal"

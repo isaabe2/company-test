@@ -3,7 +3,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 import React from "react"
 import { useEffect, useState, use } from "react"
-import NavBar from "../../components/navbar"
+import NavBar from "../../components/Navbar"
 import Loader from "../../components/Loader"
 
 interface DepartmentDetail {
