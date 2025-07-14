@@ -6,6 +6,12 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Loader from "./components/Loader"
 
+/** Home
+ * Main landing page for the application.
+ * Provides navigation to employees and departments sections.
+ * Displays a welcome message and loading state while navigating.
+ */
+
 export default function Home() {
 	const router = useRouter()
 	const [loading, setLoading] = useState(false)

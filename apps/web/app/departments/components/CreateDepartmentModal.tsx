@@ -3,6 +3,13 @@ import { Department } from "../../types/department"
 import { Employee } from "../../types/employee"
 import { Button } from "react-bootstrap"
 
+/**
+ * CreateDepartmentModal
+ * Modal component for creating a new department.
+ * Allows selecting employees and defining hierarchy.
+ * Includes validation for required fields and cycle detection in the hierarchy.
+ */
+
 interface CreateDepartmentModalProps {
 	show: boolean
 	employees: Employee[]

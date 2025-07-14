@@ -3,6 +3,12 @@ import ListGroup from "react-bootstrap/ListGroup"
 import { Department } from "../../types/department"
 import { useRouter } from "next/navigation"
 
+/**
+ * DepartmentCard
+ * Displays a clickable list of departments.
+ * Each department item navigates to its detail page when clicked.
+ */
+
 interface DepartmentCardProps {
 	departments: Department[]
 }

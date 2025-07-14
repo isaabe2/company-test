@@ -11,6 +11,13 @@ import { useRouter } from "next/navigation"
 import EmployeeList from "./components/EmployeeList"
 import ConfirmDeleteModal from "./components/ConfirmDeleteModal"
 
+/** EmployeesPage
+ * Main page for managing employees.
+ * Displays a list of employees with options to create, edit, and delete.
+ * Allows searching for employees by name.
+ * Fetches employee and department data from the backend API.
+ */
+
 export default function EmployeesPage() {
 	const [employees, setEmployees] = useState<Employee[]>([])
 	const [departments, setDepartments] = useState<Department[]>([])

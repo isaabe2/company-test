@@ -1,7 +1,6 @@
 import { Request, Response } from "express"
 import { Department, Hierarchy } from "../models/Department"
 import { Employee } from "../models/Employee"
-import { Types } from "mongoose"
 
 interface HierarchyInput {
 	superior?: string

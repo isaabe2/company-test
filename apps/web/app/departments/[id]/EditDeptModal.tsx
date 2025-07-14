@@ -2,6 +2,13 @@ import React, { useState } from "react"
 import { Department } from "../../types/department"
 import { Employee } from "../../types/employee"
 
+/**
+ * EditDeptModal
+ * Modal component for editing a department.
+ * Allows updating the department's name, description, employees, and hierarchy.
+ * Includes validation for required fields and cycle detection in the hierarchy.
+ */
+
 interface EditDeptModalProps {
 	show: boolean
 	onClose: () => void

@@ -10,6 +10,13 @@ import { Employee } from "../types/employee"
 import SearchInput from "../components/SearchInput"
 import Loader from "../components/Loader"
 
+/**
+ * DepartmentsPage
+ * Main page for viewing, searching, and creating departments.
+ * Fetches department and employee data from the backend API.
+ * Displays a list of departments and a modal for creating new ones.
+ */
+
 export default function DepartmentsPage() {
 	const [departments, setDepartments] = useState<Department[]>([])
 	const [employees, setEmployees] = useState<Employee[]>([])

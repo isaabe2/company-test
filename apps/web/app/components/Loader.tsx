@@ -1,5 +1,11 @@
 import React from "react"
 
+/** Loader
+ * Simple loading component that displays a spinner and an optional message.
+ * Used to indicate loading state in various parts of the application.
+ * Can be customized with a message prop.
+ */
+
 interface LoaderProps {
 	message?: string
 }

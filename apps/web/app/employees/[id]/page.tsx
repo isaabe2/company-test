@@ -6,6 +6,12 @@ import { useEffect, useState, use } from "react"
 import NavBar from "../../components/Navbar"
 import Loader from "../../components/Loader"
 
+/** * EmployeeDetailPage
+ * Displays detailed information about an employee, including their departments and hierarchy.
+ * Fetches employee data from the backend API.
+ * Allows viewing employee details and their associated departments.
+ */
+
 interface DepartmentDetail {
 	_id: string
 	name: string

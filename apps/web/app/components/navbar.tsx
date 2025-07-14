@@ -5,6 +5,12 @@ import Navbar from "react-bootstrap/Navbar"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
 
+/** NavBar
+ * Navigation bar component for the application.
+ * Provides links to the main sections: Departments and Employees.
+ * Highlights the active section based on the current path.
+ */
+
 function NavBar() {
 	const pathname = usePathname()
 

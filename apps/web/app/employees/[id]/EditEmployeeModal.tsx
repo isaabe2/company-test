@@ -2,6 +2,13 @@ import React, { useState } from "react"
 import { Employee } from "../../types/employee"
 import { Department } from "../../types/department"
 
+/** * EditEmployeeModal
+ * Modal component for editing an employee's details.
+ * Allows updating the employee's name, email, and department.
+ * Includes validation for required fields.
+ * Supports both editing existing employees and creating new ones.
+ */
+
 interface EditEmployeeModalProps {
 	show: boolean
 	employee: Employee | null

@@ -5,6 +5,13 @@ import { Department } from "../../types/department"
 import { TrashIcon } from "@heroicons/react/24/outline"
 import { useRouter } from "next/navigation"
 
+/** EmployeeList
+ * Displays a list of employees with options to edit and delete.
+ * Each employee item shows their name and associated departments.
+ * Allows navigation to employee details page.
+ * Includes buttons for editing and deleting employees.
+ */
+
 interface EmployeeListProps {
 	employees: Employee[]
 	departments: Department[]

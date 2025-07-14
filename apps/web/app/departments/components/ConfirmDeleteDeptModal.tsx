@@ -2,6 +2,12 @@ import { TrashIcon } from "@heroicons/react/24/outline"
 import React from "react"
 import { Button } from "react-bootstrap"
 
+/** * ConfirmDeleteDeptModal
+ * Modal component for confirming department deletion.
+ * Displays a confirmation message with the department name.
+ * Includes buttons to cancel or confirm the deletion.
+ * */
+
 interface ConfirmDeleteDeptModalProps {
 	show: boolean
 	onClose: () => void

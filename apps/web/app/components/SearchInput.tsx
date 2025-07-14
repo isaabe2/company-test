@@ -1,5 +1,11 @@
 import React from "react"
 
+/** SearchInput
+ * A reusable search input component.
+ * Accepts a value, placeholder, and onChange handler.
+ * Can be styled with additional className and inline styles.
+ */
+
 interface SearchInputProps {
 	value: string
 	placeholder?: string

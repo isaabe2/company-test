@@ -10,6 +10,11 @@ import EditDeptModal from "./EditDeptModal"
 import ConfirmDeleteDeptModal from "../components/ConfirmDeleteDeptModal"
 import Loader from "../../components/Loader"
 
+/**
+ * DepartmentDetailPage
+ * Displays details, employees, and hierarchy for a department.
+ * Allows editing and deleting the department.
+ */
 export default function DepartmentDetailPage() {
 	const params = useParams()
 	const id = params?.id as string
@@ -20,14 +25,15 @@ export default function DepartmentDetailPage() {
 	const [pendingUpdate, setPendingUpdate] = useState(false)
 	const [showDeleteModal, setShowDeleteModal] = useState(false)
 	const [pendingDelete, setPendingDelete] = useState(false)
+	const API_URL = process.env.NEXT_PUBLIC_API_URL
 
 	useEffect(() => {
 		if (!id) return
 		const fetchData = async () => {
 			try {
 				const [deptRes, empRes] = await Promise.all([
-					fetch(`http://localhost:3001/api/departments/${id}`),
-					fetch(`http://localhost:3001/api/employees?department=${id}`),
+					fetch(`${API_URL}/departments/${id}`),
+					fetch(`${API_URL}/employees?department=${id}`),
 				])
 				const deptData = await deptRes.json()
 				const empData = await empRes.json()
@@ -45,7 +51,7 @@ export default function DepartmentDetailPage() {
 	function handleEditSave(updated: { name: string; description: string }) {
 		if (!department) return
 		setPendingUpdate(true)
-		fetch(`http://localhost:3001/api/departments/${department._id}`, {
+		fetch(`${API_URL}/departments/${department._id}`, {
 			method: "PUT",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(updated),
@@ -62,7 +68,7 @@ export default function DepartmentDetailPage() {
 	function handleDeleteDepartment() {
 		if (!department) return
 		setPendingDelete(true)
-		fetch(`http://localhost:3001/api/departments/${department._id}`, {
+		fetch(`${API_URL}/departments/${department._id}`, {
 			method: "DELETE",
 		})
 			.then((res) => {

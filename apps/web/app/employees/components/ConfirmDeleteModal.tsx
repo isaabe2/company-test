@@ -1,5 +1,11 @@
 import React from "react"
 
+/** ConfirmDeleteModal
+ * Modal component for confirming employee deletion.
+ * 	Displays a confirmation message with the employee's name.
+ * 	Includes buttons to cancel or confirm the deletion.
+ * */
+
 interface ConfirmDeleteModalProps {
 	show: boolean
 	onCancel: () => void
