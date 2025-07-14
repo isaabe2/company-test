@@ -18,3 +18,14 @@ Desde la raíz del proyecto, ejecuta:
    npm run dev
    - El API estará disponible en http://localhost:3001/api
    - La web estará disponible en http://localhost:3000
+
+## Environment Variables
+
+- Create a `.env` file in `apps/web/` with the following content:
+
+  NEXT_PUBLIC_API_URL=http://localhost:3001/api
+
+- Create a `.env` file in `apps/api/` with the following content:
+
+  MONGO_URI=mongodb+srv://abeledoisa:Mi%2A170400@cluster0.mnzfrh1.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+  PORT=3001
